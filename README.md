@@ -14,10 +14,10 @@ I'm trying to avoid having to build both sdk locally as it's too huge and would 
 Also not to forget the space+download data required to build it is alot.
 So if you think this will be usefull there is a star icon somwewhere up there.
 
-## NOTE
+## Note
 If you have any suggestions/changes you would like to see here, please use the issue tab.
 
-## BUILD LOG
+## Build Log
 The build log can be retrieved from here.
 https://ci.appveyor.com/project/kenkit/ogre-6fnyg
 ## What is not working
