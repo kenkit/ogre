@@ -6,7 +6,8 @@
 ## Summary
 **OGRE 2.1+CEGUI+(OGRE_DEPS+CEGUI_DEPS) PREBUILT SDK**
 (Object-Oriented Graphics Rendering Engine Prebuilt SDK) 
-This is a prebuilt sdk of both ogre and cegui.It contains the necessary libs required to use Ogre+Cegui in your application. 
+This is a prebuilt sdk of both ogre and cegui.
+It contains the necessary libs required to use Ogre+Cegui in your application. 
 Builds are generated automatically and sourced from the respective repos.
 The builds are also from the latest commits available.
 
