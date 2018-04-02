@@ -2,7 +2,7 @@
 [![Join the chat at https://gitter.im/OGRECave/ogre](https://badges.gitter.im/OGRECave/ogre.svg)](https://gitter.im/OGRECave/ogre?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ![](Docs/ogre-logo-wetfloor.gif)
-# OGRE 2.1+CEGUI PREBUILT SDK
+# OGRE 2.1+CEGUI PREBUILT SDK (VS2015)
 ## Summary
 **OGRE 2.1+CEGUI+(OGRE_DEPS+CEGUI_DEPS) PREBUILT SDK**
 (Object-Oriented Graphics Rendering Engine Prebuilt SDK) 
