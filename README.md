@@ -1,4 +1,6 @@
-[![release](http://github-release-version.herokuapp.com/github/kenkit/ogre/release.svg?style=flat)](https://github.com/kenkit/ogre/releases/latest)
+[![GitHub Release](https://github-basic-badges.herokuapp.com/release/kenkit/ogre.svg)]()
+[![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/kenkit/ogre/total.svg)]()
+[![GitHub Issues Open](https://github-basic-badges.herokuapp.com/issues/kenkit/ogre.svg)]()
 [![Join the chat at https://gitter.im/OGRECave/ogre](https://badges.gitter.im/OGRECave/ogre.svg)](https://gitter.im/OGRECave/ogre?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ![](Docs/ogre-logo-wetfloor.gif)
