@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/OGRECave/ogre](https://badges.gitter.im/OGRECave/ogre.svg)](https://gitter.im/OGRECave/ogre?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![GitHub issue stat](https://img.shields.io/issuestats/i/github/kenkit/ogre.svg)
+![](https://img.shields.io/issuestats/i/github/kenkit/ogre.svg)
 
 ![](Docs/ogre-logo-wetfloor.gif)
 
