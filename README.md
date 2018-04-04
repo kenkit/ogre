@@ -23,6 +23,9 @@ If you have any suggestions/changes you would like to see here, please use the i
 ## Build Log
 The build log can be retrieved from here.
 https://ci.appveyor.com/project/kenkit/ogre-6fnyg?fullLog=true
+
+## RELEASES
+[Download](https://github.com/kenkit/ogre/releases/latest)
 ## What is not working
 Currently the sample browser from cegui is failing to build so I have disabled, but am working on fixing this.
 
