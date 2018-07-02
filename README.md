@@ -5,9 +5,9 @@
 ![](Docs/ogre-logo-wetfloor.gif)
 
 
-# OGRE 2.1+CEGUI PREBUILT SDK
+# OGRE PREBUILT SDK
 ## Summary
-**OGRE 2.1+CEGUI+(OGRE_DEPS+CEGUI_DEPS) PREBUILT SDK**
+**OGRE PREBUILT SDK**
 (Object-Oriented Graphics Rendering Engine Prebuilt SDK) 
 This is a prebuilt sdk of both ogre and cegui.It contains the necessary libs required to use Ogre+Cegui in your application. 
 Builds are generated automatically and sourced from the respective repos.
@@ -23,12 +23,13 @@ If you have any suggestions/changes you would like to see here, please use the i
 ## Build Log
 The build log can be retrieved from here.
 https://ci.appveyor.com/project/kenkit/ogre-6fnyg?fullLog=true
-
+https://ci.appveyor.com/project/kenkit/ogre-mm8lb?fullLog=true
 ## RELEASES
 [Download](https://github.com/kenkit/ogre/releases/latest)
 ## What is not working
-Currently the sample browser from cegui is failing to build so I have disabled, but am working on fixing this.
+Add release builds.Current builds are in debug mode
 
 | Build | Status (github) |
 |-------|-----------------|
-| MSVC | [![Build status](https://ci.appveyor.com/api/projects/status/q4q8yqy7uad0utmd?svg=true)](https://ci.appveyor.com/project/kenkit/ogre-6fnyg)
+| OGRE 2.1 MSVC | [![Build status](https://ci.appveyor.com/api/projects/status/q4q8yqy7uad0utmd?svg=true)](https://ci.appveyor.com/project/kenkit/ogre-6fnyg)
+| OGRE 1.11 MSVC | [![Build status](https://ci.appveyor.com/api/projects/status/s0l07pa1uo7coda2?svg=true)](https://ci.appveyor.com/project/kenkit/ogre-mm8lb)
