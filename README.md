@@ -23,12 +23,13 @@ If you have any suggestions/changes you would like to see here, please use the i
 ## Build Log
 The build log can be retrieved from here.
 https://ci.appveyor.com/project/kenkit/ogre-6fnyg?fullLog=true
+
 https://ci.appveyor.com/project/kenkit/ogre-mm8lb?fullLog=true
-## RELEASES
+## Releases
 [Download](https://github.com/kenkit/ogre/releases/latest)
 ## What is not working
 Add release builds.Current builds are in debug mode
-## BUILD STATUS
+## Build Status
 | Build | Status (github) |
 |-------|-----------------|
 | OGRE 2.1 MSVC | [![Build status](https://ci.appveyor.com/api/projects/status/q4q8yqy7uad0utmd?svg=true)](https://ci.appveyor.com/project/kenkit/ogre-6fnyg)
