@@ -22,9 +22,8 @@ If you have any suggestions/changes you would like to see here, please use the i
 
 ## Build Log
 The build log can be retrieved from here.
-https://ci.appveyor.com/project/kenkit/ogre-6fnyg?fullLog=true
-
-https://ci.appveyor.com/project/kenkit/ogre-mm8lb?fullLog=true
+[2.1  log] (https://ci.appveyor.com/project/kenkit/ogre-6fnyg?fullLog=true)
+[1.11 log](https://ci.appveyor.com/project/kenkit/ogre-mm8lb?fullLog=true)
 ## Releases
 [Download](https://github.com/kenkit/ogre/releases/latest)
 ## What is not working
