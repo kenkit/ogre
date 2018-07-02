@@ -5,7 +5,7 @@
 ![](Docs/ogre-logo-wetfloor.gif)
 
 
-# OGRE PREBUILT SDK
+# OGRE PREBUILT SDK VS2015
 ## Summary
 **OGRE PREBUILT SDK**
 (Object-Oriented Graphics Rendering Engine Prebuilt SDK) 
