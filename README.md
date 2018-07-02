@@ -28,7 +28,7 @@ The build log can be retrieved from here.
 [1.11 log](https://ci.appveyor.com/project/kenkit/ogre-mm8lb?fullLog=true)
 
 ## Releases
-[Download](https://github.com/kenkit/ogre/releases/latest)
+[Download](https://github.com/kenkit/ogre/releases)
 ## What is not working
 Add release builds.Current builds are in debug mode
 
