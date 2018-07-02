@@ -31,6 +31,7 @@ The build log can be retrieved from here.
 [Download](https://github.com/kenkit/ogre/releases/latest)
 ## What is not working
 Add release builds.Current builds are in debug mode
+Fixed sdl2 detection
 ## Build Status
 | Build | Status (github) |
 |-------|-----------------|
