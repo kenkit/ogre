@@ -30,7 +30,7 @@ The build log can be retrieved from here.
 ## Releases
 [Download](https://github.com/kenkit/ogre/releases)
 ## What is not working
-Add release builds.Current builds are in debug mode
+Only ogre 2.1 builds are failing, will work on this....
 
 Fixed sdl2 detection in cmake
 ## Build Status
