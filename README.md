@@ -34,7 +34,7 @@ The build log can be retrieved from here.
 The following cmake script will download and install the latest ogre from this repo.
 You must make sure you have set your OGRE_HOME Enviroment variable to your preffered instalation location.
 This script will automatically set OGRE_DIR and SDL2_DIR so that cmake can find them easily.
-All you have to do is copy this code to your cmakelists.txt prefferable at the top before calling findogre(...) als make sure you have 7z installed.
+All you have to do is copy this code to your cmakelists.txt prefferable at the top before calling findogre(...) also make sure you have 7z installed.
 
 ```
 #----------------------------------------------------------------------
