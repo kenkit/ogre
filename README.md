@@ -37,12 +37,8 @@ This script will automatically set OGRE_DIR and SDL2_DIR so that cmake can find 
 All you have to do is copy this code to your cmakelists.txt prefferable at the top before calling findogre(...) also make sure you have 7z installed.
 
 ```
+
 #----------------------------------------------------------------------
-if(EXISTS "C:/Program Files (x86)/7-Zip/7z.exe")
-    SET (7ZIP_EXECUTABLE "C:/Program Files (x86)/7-Zip/7z.exe")
-elseif(EXISTS "C:/Program Files/7-Zip/7z.exe")
-    SET (7ZIP_EXECUTABLE "C:/Program Files/7-Zip/7z.exe")
-endif()
 if(EXISTS ${CMAKE_SOURCE_DIR}/JSONParser.cmake)
     include(JSONParser.cmake)
     set(Downloaded_JS TRUE)
@@ -61,12 +57,12 @@ if (WIN32)
   set (show_contents_prog type)
 endif (WIN32)
 
-if(EXISTS "${CMAKE_SOURCE_DIR}/current_ogre")
-    file(READ "${CMAKE_SOURCE_DIR}/current_ogre" current_version)
+if(EXISTS " ${OGRE_HOME}/current_ogre")
+    file(READ "${OGRE_HOME}/current_ogre" current_version)
 else()
     set(current_version 0)
 endif()
-set(Ogre_zip "${CMAKE_SOURCE_DIR}/bin/Latest_ogre.zip")
+set(Ogre_zip "${OGRE_HOME}/Latest_ogre.zip")
 string(REPLACE "/" "\\"  Ogre_zip  ${Ogre_zip})
 string(REPLACE "\\" "/"  OGRE_HOME  ${OGRE_HOME})
 
@@ -88,29 +84,39 @@ if(Downloaded_JS)
   
     if((current_version  LESS  latest_version_2 ) OR (current_version LESS_EQUAL "0" ))
         message("DOWNLOADING NEW OGRE FROM KENKITS REPO:${download_url}" )
-        file(WRITE "${CMAKE_SOURCE_DIR}/current_ogre" ${latest_version})
         file(DOWNLOAD "${download_url}" "${Ogre_zip}" SHOW_PROGRESS STATUS status)
        message("Removing old ogre in:${OGRE_HOME} ")
        if(EXISTS ${OGRE_HOME}/build/sdk)
             FILE(REMOVE_RECURSE ${OGRE_HOME}/build)
       endif()
-       file(WRITE ${CMAKE_SOURCE_DIR}/bin/extract.bat "\"${7ZIP_EXECUTABLE}\" x  -y -r ${Ogre_zip} -o${OGRE_HOME}")
-        execute_process(COMMAND ${CMAKE_SOURCE_DIR}/bin/extract.bat RESULT_VARIABLE rv)
-        message("7z='${rv}'")
-        message("Setting ogre_dir environment variable")
-        execute_process(COMMAND "setx OGRE_DIR \"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv)  
-        message("7z='${rv}'")
-        execute_process(COMMAND "set OGRE_DIR =\"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv)
-        message("7z='${rv}'")  
-        message("Setting SDL2_DIR environment variable")
-        execute_process(COMMAND "setx SDL2DIR \"${OGRE_HOME}/build/sdk/ogredeps/cmake\""  RESULT_VARIABLE rv)  
-        message("7z='${rv}'")
-        execute_process(COMMAND "set SDL2DIR =\"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv)  
-        message("7z='${rv}'")
-        execute_process(COMMAND "setx SDL2_DIR \"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv) 
-        message("7z='${rv}'") 
-        execute_process(COMMAND "set SDL2_DIR =\"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv)
-        message("7z='${rv}'")  
+       file(WRITE ${OGRE_HOME}/extract.bat "\"${7ZIP_EXECUTABLE}\" x  -y -r ${Ogre_zip} -o${OGRE_HOME}")
+
+       list(GET status 0 status_code)
+       list(GET status 1 status_string)
+        if(NOT status_code EQUAL 0)
+        message(FATAL_ERROR "error: downloading failed
+        status_code: ${status_code}
+        status_string: ${status_string}")
+        else()
+            message("Download succeeded")
+            file(WRITE "${OGRE_HOME}/current_ogre" ${latest_version})
+            execute_process(COMMAND ${OGRE_HOME}/extract.bat RESULT_VARIABLE rv)
+            file(REMOVE ${OGRE_HOME}/extract.bat)
+            message("Setting ogre_dir environment variable")
+            execute_process(COMMAND "setx OGRE_DIR \"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv)  
+            message("7z='${rv}'")
+            execute_process(COMMAND "set OGRE_DIR =\"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv)
+            message("7z='${rv}'")  
+            message("Setting SDL2_DIR environment variable")
+            execute_process(COMMAND "setx SDL2DIR \"${OGRE_HOME}/build/sdk/ogredeps/cmake\""  RESULT_VARIABLE rv)  
+            message("7z='${rv}'")
+            execute_process(COMMAND "set SDL2DIR =\"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv)  
+            message("7z='${rv}'")
+            execute_process(COMMAND "setx SDL2_DIR \"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv) 
+            message("7z='${rv}'") 
+            execute_process(COMMAND "set SDL2_DIR =\"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv)
+            message("7z='${rv}'")  
+        endif()     
     else ()
         message("YOU HAVE THE LATEST OGRE INSTALLED")
     endif()
@@ -118,6 +124,8 @@ endif()
 
 
 #----------------------------------------------------------------------
+
+
 ```
 ## What is not working
 Only ogre 2.1 builds are failing, will work on this....
