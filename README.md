@@ -37,7 +37,6 @@ This script will automatically set OGRE_DIR and SDL2_DIR so that cmake can find 
 All you have to do is copy this code to your cmakelists.txt prefferable at the top before calling findogre(...) also make sure you have 7z installed.
 
 ```
-
 #----------------------------------------------------------------------
 if(EXISTS ${CMAKE_SOURCE_DIR}/JSONParser.cmake)
     include(JSONParser.cmake)
@@ -102,19 +101,36 @@ if(Downloaded_JS)
             file(WRITE "${OGRE_HOME}/current_ogre" ${latest_version})
             execute_process(COMMAND ${OGRE_HOME}/extract.bat RESULT_VARIABLE rv)
             file(REMOVE ${OGRE_HOME}/extract.bat)
+            
             message("Setting ogre_dir environment variable")
-            execute_process(COMMAND "setx OGRE_DIR \"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv)  
+            file(WRITE ${OGRE_HOME}/env.bat "setx OGRE_DIR \"${OGRE_HOME}/build/sdk\"")
+            execute_process(COMMAND "${OGRE_HOME}/env.bat"  RESULT_VARIABLE rv)  
             message("7z='${rv}'")
-            execute_process(COMMAND "set OGRE_DIR =\"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv)
+
+            file(WRITE ${OGRE_HOME}/env.bat "set OGRE_DIR =\"${OGRE_HOME}/build/sdk\"")
+            execute_process(COMMAND ${OGRE_HOME}/env.bat  RESULT_VARIABLE rv)
+            file(REMOVE ${OGRE_HOME}/env.bat)
             message("7z='${rv}'")  
+
+            file(WRITE ${OGRE_HOME}/env.bat  "setx SDL2DIR \"${OGRE_HOME}/build/sdk/ogredeps/cmake\"")
             message("Setting SDL2_DIR environment variable")
-            execute_process(COMMAND "setx SDL2DIR \"${OGRE_HOME}/build/sdk/ogredeps/cmake\""  RESULT_VARIABLE rv)  
+            execute_process(COMMAND  ${OGRE_HOME}/env.bat RESULT_VARIABLE rv) 
+            file(REMOVE ${OGRE_HOME}/env.bat) 
             message("7z='${rv}'")
-            execute_process(COMMAND "set SDL2DIR =\"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv)  
+
+            file(WRITE ${OGRE_HOME}/env.bat  "set SDL2DIR =\"${OGRE_HOME}/build/sdk\"")
+            execute_process(COMMAND   ${OGRE_HOME}/env.bat  RESULT_VARIABLE rv) 
+            file(REMOVE ${OGRE_HOME}/env.bat) 
             message("7z='${rv}'")
-            execute_process(COMMAND "setx SDL2_DIR \"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv) 
+
+            file(WRITE ${OGRE_HOME}/env.bat "setx SDL2_DIR \"${OGRE_HOME}/build/sdk\"")
+            execute_process(COMMAND  ${OGRE_HOME}/env.bat  RESULT_VARIABLE rv) 
+            file(REMOVE ${OGRE_HOME}/env.bat)
             message("7z='${rv}'") 
-            execute_process(COMMAND "set SDL2_DIR =\"${OGRE_HOME}/build/sdk\""  RESULT_VARIABLE rv)
+
+            file(WRITE ${OGRE_HOME}/env.bat "set SDL2_DIR =\"${OGRE_HOME}/build/sdk\"")
+            execute_process(COMMAND ${OGRE_HOME}/env.bat  RESULT_VARIABLE rv)
+            file(REMOVE ${OGRE_HOME}/env.bat)
             message("7z='${rv}'")  
         endif()     
     else ()
@@ -124,8 +140,6 @@ endif()
 
 
 #----------------------------------------------------------------------
-
-
 ```
 ## What is not working
 Only ogre 2.1 builds are failing, will work on this....
