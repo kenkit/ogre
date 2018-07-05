@@ -149,7 +149,7 @@ Only ogre 2.1 builds are failing, will work on this....
 Fixed sdl2 detection in cmake
 
 ## TODO
-Make current_ogre to be in OGRE_HOME So it's not deleted and will make the script work on other projects too
+Fix execute commands since they are causing bugs in cmake-server
 ## Build Status
 | Build | Status (github) |
 |-------|-----------------|
