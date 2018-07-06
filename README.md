@@ -37,7 +37,7 @@ This script will automatically set OGRE_DIR and SDL2_DIR so that cmake can find 
 All you have to do is copy this code to your cmakelists.txt prefferable at the top before calling findogre(...) also make sure you have 7z installed.
 
 ```
-#----------------------------------------------------------------------
+
 #----------------------------------------------------------------------
 if(EXISTS ${CMAKE_SOURCE_DIR}/JSONParser.cmake)
     include(JSONParser.cmake)
@@ -120,17 +120,17 @@ if(Downloaded_JS)
             file(REMOVE ${OGRE_HOME}/env.bat) 
             message("setx SDL2_DIR:${rv}")
 
-            file(WRITE ${OGRE_HOME}/env.bat  "set SDL2DIR =\"${OGRE_HOME}/build/sdk\"")
+            file(WRITE ${OGRE_HOME}/env.bat  "set SDL2DIR =\"${OGRE_HOME}/build/sdk/ogredeps/cmake\"")
             execute_process(COMMAND   ${OGRE_HOME}/env.bat  RESULT_VARIABLE rv  OUTPUT_QUIET) 
             file(REMOVE ${OGRE_HOME}/env.bat) 
             message("set SDL2DIR:${rv}")
 
-            file(WRITE ${OGRE_HOME}/env.bat "setx SDL2_DIR \"${OGRE_HOME}/build/sdk\"")
+            file(WRITE ${OGRE_HOME}/env.bat "setx SDL2_DIR \"${OGRE_HOME}/build/sdk/ogredeps/cmake\"")
             execute_process(COMMAND  ${OGRE_HOME}/env.bat  RESULT_VARIABLE rv  OUTPUT_QUIET) 
             file(REMOVE ${OGRE_HOME}/env.bat)
-            message("setx SDL2_DIR:${rv}")
+            message("setx SDL2_DIR:${rv}") 
 
-            file(WRITE ${OGRE_HOME}/env.bat "set SDL2_DIR =\"${OGRE_HOME}/build/sdk\"")
+            file(WRITE ${OGRE_HOME}/env.bat "set SDL2_DIR =\"${OGRE_HOME}/build/sdk/ogredeps/cmake\"")
             execute_process(COMMAND ${OGRE_HOME}/env.bat  RESULT_VARIABLE rv  OUTPUT_QUIET)
             file(REMOVE ${OGRE_HOME}/env.bat)
             message("set SDL2_DIR:${rv}")
